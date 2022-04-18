@@ -1,1 +1,1 @@
-json.array! @investments, partial: "investments/investment", as: :investment
+json.array! @investments, partial: 'investments/investment', as: :investment
