@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_18_214108) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_19_152315) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,9 +20,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_18_214108) do
     t.string "name"
     t.string "icon"
     t.bigint "user_id", null: false
-    t.bigint "investment_id", null: false
-    t.index ["investment_id"], name: "index_groups_on_investment_id"
     t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "investment_groups", force: :cascade do |t|
+    t.bigint "investment_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_investment_groups_on_group_id"
+    t.index ["investment_id"], name: "index_investment_groups_on_investment_id"
   end
 
   create_table "investments", force: :cascade do |t|
@@ -46,13 +53,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_18_214108) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "groups", "investments"
   add_foreign_key "groups", "users"
+  add_foreign_key "investment_groups", "groups"
+  add_foreign_key "investment_groups", "investments"
   add_foreign_key "investments", "users"
 end
