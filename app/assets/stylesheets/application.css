@@ -13,23 +13,23 @@
  *= require_tree .
  *= require_self
  */
- @font-face {
-   font-family: 'Lobster';
-   src: url('Lobster-Regular.ttf');
- }
+@font-face {
+  font-family: 'Lobster';
+  src: url('Lobster-Regular.ttf');
+}
 
- @font-face {
+@font-face {
   font-family: 'Proxima Nova';
   src: url('Proxima-Nova.otf');
 }
 
- * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- .page-container {
+.page-container {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -43,27 +43,94 @@ a {
   text-decoration: none;
 }
 
- #splash-title {
-   font-family: 'Lobster', sans-serif;
- }
+#splash-title {
+  font-family: 'Lobster', sans-serif;
+}
 
- .splash-button {
-   font-family: 'Proxima-Nova', sans-serif;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  }
+.splash-button {
+  font-family: 'Proxima-Nova', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- #login {
-   margin-top: 150px;
-   background-color: #3978c3;
-   width: 90vw;
-   height: 6%;
-   border-radius: 3px;
-   color: #c7def1;
- }
+#login {
+  margin-top: 150px;
+  background-color: #3978c3;
+  width: 90vw;
+  height: 6%;
+  border-radius: 3px;
+  color: #c7def1;
+}
 
- #signup {
-   margin-top: 20px;
-   color: #9d9fa2;
- }
+#signup {
+  margin-top: 20px;
+  color: #9d9fa2;
+}
+
+.login-page {
+  font-family: 'Proxima-Nova', sans-serif;
+  height: 100vw;
+  width: 100vw;
+}
+
+.login-top {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #336bac;
+  height: 18%;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #c6d6ed;
+  font-weight: 300;
+}
+
+#login-title {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.login-links {
+  color: #c6d6ed;
+}
+
+#back-button {
+  font-size: 20px;
+}
+
+.new_user {
+  height: 100vh;
+  margin-top: 3%;
+  background-color: #f6f5f8;
+}
+
+.field {
+  height: 13vw;
+}
+
+input {
+  width: 100vw;
+  height: 100%;
+  border: 1px solid #f2f1f3;
+  background: #fff;
+}
+
+input::placeholder {
+  font-size: 15px;
+  padding: 4px;
+  color: #d0d2d4;
+}
+
+.actions {
+  color: #c6c9ca;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 3%;
+}
+
+#submit-button {
+  border: none;
+  background: none;
+}
