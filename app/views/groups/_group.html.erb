@@ -1,2 +1,5 @@
-<div id="<%= dom_id group %>">
+<div id="<%= dom_id group %>" class="group-card">
+  <img class="group-icon" src=<%= group.icon %>>
+  <h2 class="group-name"><%= group.name %></h2>
+  <p>Amount: <%= group.investments.count %></p>
 </div>
