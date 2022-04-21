@@ -62,8 +62,22 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "purchase_production"
 
-  config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'https://vechicin-purchase.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mail.com',
+    port: 587,
+    domain: 'https://vechicin-purchase.herokuapp.com/',
+    user_name: 'purchaserails@gmail.com',
+    password: 'Santilucy1995@',
+    authentication: 'plain',
+    enable_starttls_auto: true }
+
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
+    logger           = ActiveSupport::Logger.new($stdout)
+    logger.formatter = config.log_formatter
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+  end
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
