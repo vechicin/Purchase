@@ -1,9 +1,14 @@
-<h1>New investment</h1>
+<div class="login-page">
+  <div class="login-top">
+    <h2 class="login-title">New transaction</h2>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "login-links", id: "signout" %>
+  </div>
 
-<%= render "form", investment: @investment %>
+  <%= render "form", investment: @investment %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to investments", investments_path %>
+  <div class="actions">
+    <%= link_to "Back to group", group_path(@group), class: "actions" %>
+  </div>
 </div>

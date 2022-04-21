@@ -11,6 +11,7 @@ class InvestmentsController < ApplicationController
 
   # GET /investments/new
   def new
+    @group = Group.find(params[:group_id])
     @investment = Investment.new
   end
 
@@ -20,10 +21,12 @@ class InvestmentsController < ApplicationController
   # POST /investments or /investments.json
   def create
     @investment = Investment.new(investment_params)
+    @investment.user_id = current_user.id
+    @investment.group_id = params[:group_id]
 
     respond_to do |format|
       if @investment.save
-        format.html { redirect_to investment_url(@investment), notice: 'Investment was successfully created.' }
+        format.html { redirect_to group_path(params[:group_id]), notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @investment }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,6 +67,6 @@ class InvestmentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def investment_params
-    params.fetch(:investment, {})
+    params.require(:investment).permit(:name, :amount)
   end
 end
