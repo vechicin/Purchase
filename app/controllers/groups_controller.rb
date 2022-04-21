@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1 or /groups/1.json
   def show
-    @investments = Investment.where(group_id: @group.id) 
+    @investments = Investment.where(group_id: @group.id)
   end
 
   # GET /groups/new
