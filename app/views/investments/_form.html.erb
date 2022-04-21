@@ -1,4 +1,4 @@
-<%= form_with(model: investment) do |form| %>
+<%= form_with(model: [@group, @group.investments.build]) do |form| %>
   <% if investment.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(investment.errors.count, "error") %> prohibited this investment from being saved:</h2>
@@ -11,7 +11,15 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.submit %>
+  <div class="field">
+    <%= form.text_field :name, autofocus: true, placeholder: "Name"%>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :amount, step: :any, autofocus: true, placeholder: "Amount"%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add transaction", class: "actions", id: "submit-button" %>
   </div>
 <% end %>
