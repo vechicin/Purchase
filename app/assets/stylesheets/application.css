@@ -149,7 +149,7 @@ input::placeholder {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  color: #bbbbbb;
+  color: #bbb;
   border: 1px solid #e8e8e8;
   background-color: #fff;
   margin: 3%;
@@ -183,6 +183,6 @@ input::placeholder {
   border-radius: 3px;
 }
 
-.button-border>a {
+.button-border > a {
   color: #d6ecc9;
 }
