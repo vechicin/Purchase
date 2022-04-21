@@ -62,7 +62,8 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "purchase_production"
 
-  config.action_mailer.default_url_options = { host: 'https://vechicin-purchase.herokuapp.com/' }
+  # config.action_mailer.default_url_options = { host: 'https://vechicin-purchase.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.mail.com',
