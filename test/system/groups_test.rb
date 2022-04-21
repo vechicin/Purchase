@@ -15,10 +15,10 @@ class GroupsTest < ApplicationSystemTestCase
     click_on 'ADD GROUP'
 
     fill_in "Paste group icon's link here", with: @group.icon
-    fill_in "Group name", with: @group.name
-    click_on "Add group"
+    fill_in 'Group name', with: @group.name
+    click_on 'Add group'
 
     assert_text 'Group was successfully created'
-    click_on "Back to groups"
+    click_on 'Back to groups'
   end
 end
