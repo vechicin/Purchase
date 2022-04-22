@@ -171,6 +171,9 @@ input::placeholder {
   align-items: center;
   height: 10%;
   margin-top: 20%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 .button-border {

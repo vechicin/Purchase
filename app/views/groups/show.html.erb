@@ -2,6 +2,7 @@
   <p style="color: green"><%= notice %></p>
 
 <div class="login-top">
+    <%= link_to "<-", groups_path, class: "login-links" %>
     <h2 class="login-title">TRANSACTIONS</h2>
     <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "login-links", id: "signout" %>
   </div>
@@ -18,9 +19,5 @@
     <div class="button-border">
       <%= link_to "ADD TRANSACTION", new_group_investment_path(@group)  %>
     </div>
-  </div>
-
-  <div class="actions">
-    <%= link_to "Back to home", groups_path, class: "actions" %>
   </div>
 </div>

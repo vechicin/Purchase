@@ -1,9 +1,0 @@
-one:
-  name: MyString
-  amount: 1.5
-  user: one
-
-two:
-  name: MyString
-  amount: 1.5
-  user: two
