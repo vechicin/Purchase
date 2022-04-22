@@ -1,0 +1,23 @@
+<div class="login-page">
+  <p style="color: green"><%= notice %></p>
+
+<div class="login-top">
+    <%= link_to "<-", groups_path, class: "login-links" %>
+    <h2 class="login-title">TRANSACTIONS</h2>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "login-links", id: "signout" %>
+  </div>
+
+  <%= render @group %>
+
+  <div>
+    <% @investments.each do |investment| %>
+      <%=  render 'investment', investment: investment %>
+    <% end %>
+  </div>
+
+  <div class="add-button">
+    <div class="button-border">
+      <%= link_to "ADD TRANSACTION", new_group_investment_path(@group)  %>
+    </div>
+  </div>
+</div>

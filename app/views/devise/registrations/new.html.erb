@@ -1,0 +1,37 @@
+<div class="login-page">
+  <div class="login-top">
+    <%= link_to "<-", url_for(:back), class: "login-links", id: "back-button" %>
+    <h2 class="login-title">REGISTER</h2>
+    <%= link_to "Next", new_user_session_path, class: "login-links" %>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.text_field :first_name, autofocus: true, placeholder: "First name" %>
+    </div>
+
+    <div class="field">
+      <%= f.text_field :last_name, autofocus: true , placeholder: "Last name" %>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class: "actions", id: "submit-button" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
