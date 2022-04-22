@@ -3,6 +3,14 @@
 
 > This is a budgeting app built with Ruby on Rails.
 
+![screenshot](./images/screenshot.png)
+
+![screenshot](./images/screenshot2.png)
+
+![screenshot](./images/screenshot3.png)
+
+![screenshot](./images/screenshot4.png)
+
 ## Built With
 
 - Ruby on Rails
